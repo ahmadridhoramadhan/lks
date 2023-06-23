@@ -5,23 +5,15 @@ class Plant {
             "../Sprites/Seeds/PeaShooterSeed.png",
             "../Sprites/Seeds/PeaShooterSeed.png",
             "../Sprites/Seeds/WallNutSeed.png",
-        ]
+        ];
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
+        this.display = document.getElementById('plant-card');
+        for (let index = 0; index < this.images.length; index++) {
+            const randomIndex = Math.floor(Math.random() * this.images.length);
+            const div = `<div><img src="${this.images[randomIndex]}" alt=""></div>`;
+            this.display.insertAdjacentHTML('afterbegin', div);
         }
 
-
-
-        this.display = document.getElementById('plant-card')
-        for (let index = 0; index < 4; index++) {
-            const div = `<div><img src="${this.images[shuffleArray(this.images)]}" alt=""></div>`
-            this.display.insertAdjacentHTML('afterbegin', div)
-        }
-        console.log(shuffleArray(this.images));
     }
 
 }
