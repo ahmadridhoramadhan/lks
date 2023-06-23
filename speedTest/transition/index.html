@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+
+    <style>
+        #gambar-split > *{
+            border: 2px solid orange;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="split(event)">
+        <label for="x">x:</label>
+        <input type="number" name="x" id="x">
+        <label for="y">y:</label>
+        <input type="number" name="y" id="y">
+        <button type="submit">split</button>
+    </form>
+
+    <div id="image" style="margin-top: 10px; position: relative; width: fit-content;">
+        <img src="image.jpg" alt="" width="400">
+
+        <div>
+
+        </div>
+            <div id="gambar-split" style="position: absolute; width: 100%; height: 100%; top: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr));">
+        </div>
+    </div>
+
+
+    <script>
+        function split(event) {
+            event.preventDefault()
+            // alert('a')
+            const x = event.target.x.value
+            const y = event.target.y.value
+            
+            if (x && y) {
+                const container = document.getElementById('gambar-split')
+                container.style.gridTemplateColumns = 'grid-template-columns: repeat('+ x+', minmax(0,1fr))'
+                
+                const totalDiv = parseInt(x) * parseInt(y)
+                
+                for (let i = 0; i < totalDiv; i++) {
+                    const div = `<dir onclick="dis(event)"></dir>`
+                    // container.appendChild(div)
+                    container.insertAdjacentHTML('afterbegin', div)
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
