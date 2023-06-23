@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pvz</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="background">
+            <img src="../Sprites/General/Background.jpg" alt="">
+            <div style="position: absolute; top: 0; display: flex; justify-content: center; width: 100%;">
+                <div class="">
+                    <div class="sun-display">50</div>
+                    <div class="plant-card" id="plant-card">
+
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tr>
+                                <td>player</td>
+                                <td>:</td>
+                                <td id="username-display"></td>
+                            </tr>
+                            <tr>
+                                <td>score</td>
+                                <td>:</td>
+                                <td id="score-display">0</td>
+                            </tr>
+                            <tr>
+                                <td>time</td>
+                                <td>:</td>
+                                <td id="timer-display">00:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="shovel-display"><img src="../Sprites/General/Shovel.png" width="60" alt=""></div>
+                </div>
+            </div>
+
+            <div class="board">
+                <div><img src="../Sprites/General/lawnmowerIdle.gif" width="100" alt=""></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><img src="../Sprites/General/lawnmowerIdle.gif" width="100" alt=""></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><img src="../Sprites/General/lawnmowerIdle.gif" width="100" alt=""></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><img src="../Sprites/General/lawnmowerIdle.gif" width="100" alt=""></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><img src="../Sprites/General/lawnmowerIdle.gif" width="100" alt=""></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="leaderboard">
+            <div>
+                <h1>leaderboard</h1>
+                <div>
+                    <select name="sort" id="sort">
+                        <option value="username">sort by username</option>
+                        <option value="username">sort by score</option>
+                    </select>
+
+                    <div style="display: flex;">
+                        <div>
+                            <h3>thomas galih</h3>
+                            <p>score : 22</p>
+                        </div>
+                        <div>
+                            <button style="padding: 0.5rem 0.8rem;" type="button">detail</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="alert" style="display: none; font-size: 10rem" id="countdown"></div>
+
+
+    <script src="classes/timer.js"></script>
+    <script src="classes/sun.js"></script>
+    <script src="classes/player.js"></script>
+    <script src="classes/plant.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
