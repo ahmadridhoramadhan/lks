@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANVAS</title>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <canvas height="320" width="400"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.querySelector('canvas')
+
+        const ctx = canvas.getContext('2d')
+
+        ctx.beginPath()
+        ctx.fillStyle = 'green'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+
+        ctx.beginPath()
+        ctx.fillStyle = 'white'
+        ctx.arc(10, canvas.height / 2, 10, 0, 2 * Math.PI)
+        ctx.fill()
+
+        let begin = 10
+        function animate() {
+            // ctx.beginPath()
+            // ctx.fillStyle = 'green'
+            // ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+            ctx.beginPath()
+            ctx.fillStyle = 'green'
+            ctx.arc(begin - 3, canvas.height / 2, 10, 0, 2 * Math.PI)
+            ctx.fill()
+
+            ctx.beginPath()
+            ctx.fillStyle = 'white'
+            ctx.arc(begin++, canvas.height / 2, 10, 0, 2 * Math.PI)
+            ctx.fill()
+
+
+            if (begin <= canvas.width - 10) {
+                window.requestAnimationFrame(animate)
+            }
+        }
+
+        animate()
+
+    </script>
+</body>
+
+</html>
