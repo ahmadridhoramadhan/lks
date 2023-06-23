@@ -53,7 +53,9 @@ class Zombi {
         animate(i, this.images);
     }
 
-    run() {
+    run(zombie) {
+        zombie.dataset.intervalId = setInterval(() => {
 
+        }, 100);
     }
 }
