@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>digital timer</title>
+    <title>timer</title>
 </head>
+
 <body>
-    
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+        <div>
+            <button type="button" id="timer-start-button" style="padding: 0.25rem 0.8rem; background-color: aqua;">start
+                timer</button>
+            <button type="button" id="timer-stop-button" style="padding: 0.25rem 0.8rem; background-color: brown">stop
+                timer</button>
+            <button type="button" id="timer-reset-button"
+                style="padding: 0.25rem 0.8rem; background-color: chocolate;">reset timer</button>
+        </div>
+        <div style="font-size: 13rem;" id="timer-display">
+            000:00
+        </div>
+    </div>
+
+    <script src="timer.js"></script>
+    <script>
+        const timer = new Timer()
+    </script>
 </body>
+
 </html>

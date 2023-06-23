@@ -14,18 +14,21 @@ class Timer {
     start() {
         this.intervalId = setInterval(() => {
             this.update()
-        }, 10);
+        }, 16, 66666666666667);
     }
     update() {
         this.centiSecond++
-        if (this.centiSecond >= 100) {
+        if (this.centiSecond >= 60) {
             this.second++
             this.centiSecond = 0
         }
         this.display.textContent = this.second.toString().padStart(3, 0) + ':' + this.centiSecond.toString().padStart(2, 0)
-        if (this.centiSecond >= 100) {
+        if (this.centiSecond >= 60) {
             clearInterval(this.intervalId)
             this.start()
+        }
+        if (this.second >= 999 && this.centiSecond >= 59) {
+            this.stop()
         }
     }
     stop() {

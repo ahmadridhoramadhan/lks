@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game welcome</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input::placeholder {
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body style="background-color: chocolate; display: flex;">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; flex: auto;">
+        <div>
+            <img src="Sprites/General/logo.png" alt="">
+        </div>
+        <form onsubmit="play(event)">
+            <div style="display: flex; flex-direction: column;">
+                <input type="text" name="username" style="background-color: transparent; padding: 0.3rem 0.7rem; border: solid 2px black; margin-bottom: 5px;" id="username" placeholder="input username">
+                <select name="level" name="level" id="level" style="background-color: transparent; padding: 0.3rem 0.7rem; border: solid 2px black; margin-bottom: 5px;">
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <button type="submit" style="padding: 0.5rem 1rem; background-color: green; border: 0;"><img src="Sprites/General/Shovel.png" width="10" alt=""> play game</button>
+                    <button type="button" onclick="ins(event)" data-ins="" style="padding: 0.5rem 1rem; background-color: orange; border:  0;">instruction</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="padding: 3rem; display: none;" id="ins" >
+        <div style="background-color: rgba(0, 0, 0, 0.374); height: 100%; color: white;">
+            <div style="display: flex; justify-content: space-between; gap: 100px;">
+                <h1>how to play game</h1>
+                <button type="button" onclick="ins(event)"><img src="Sprites/General/close-icon.png" width="30" 0;" alt=""></button>
+            </div>
+            <div style="margin-left: 50px;">
+                <ol>
+                    <li>input username</li>
+                    <li>take the sun to chose the plant card</li>
+                    <li>put a plant card into the field to fight zombies</li>
+                    <li>dont let zombies pass through the yard</li>
+                    <li>enjoy!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ins(event) {
+            const ins = document.getElementById('ins')
+
+            if (ins.dataset.ins == 'false') {
+                ins.dataset.ins = true
+
+                ins.style.display = 'block'
+            }else{
+                ins.dataset.ins = false
+
+                ins.style.display = 'none'
+            }
+        }
+
+        function play(event) {
+            event.preventDefault()
+
+            const username = event.target.username.value
+            const level = event.target.level.value
+
+            if (username && level) {
+                sessionStorage.setItem('username', username)
+                sessionStorage.setItem('level', level)
+
+                window.location.href = ''
+            }else{
+                alert('input username!')
+            }
+        }
+    </script>
+</body>
+
+</html>
