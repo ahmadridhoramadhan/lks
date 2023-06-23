@@ -4,10 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>loading animation</title>
+    
+    <style>
+        body{
+            background-color: rgb(65, 56, 126);
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .container >*{
+            height: 100px;
+            width: 20px;
+            background-color:aqua;
+        }
+
+        .container > :nth-child(1){
+            height: 100px;
+            animation-name: loading;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+        .container > :nth-child(2){
+            height: 100px;
+            animation-name: loading;
+            animation-duration: 2s;
+            animation-delay: 500ms;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+        .container > :nth-child(3){
+            height: 100px;
+            animation-name: loading;
+            animation-duration: 2s;
+            animation-delay: 1000ms;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+        .container > :nth-child(4){
+            height: 100px;
+            animation-name: loading;
+            animation-duration: 2s;
+            animation-delay: 1500ms;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes loading {
+            0%{
+                height: 100px;
+            }
+            50%{
+                height: 40px;
+            }
+            10%{
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div style="display: flex; height: 100vh; justify-content: center; align-items: center;">
-        100
+        <div class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
 </body>
 </html>
